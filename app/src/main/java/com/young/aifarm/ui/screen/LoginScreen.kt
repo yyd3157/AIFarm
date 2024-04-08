@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,7 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
@@ -40,9 +44,23 @@ fun LoginScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Image(modifier = Modifier
+            .size(155.dp).padding(bottom = 20.dp),
+            painter = painterResource(id = R.drawable.ic_aifarm),
+            contentDescription = null,
+            contentScale = ContentScale.Fit)
+
         Text(
-            text = "AIFarm",
-            modifier = Modifier.padding(bottom = 65.dp)
+            text = stringResource(id = R.string.welcome),
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 10.dp)
+        )
+
+        Text(
+            text = stringResource(id = R.string.app_introduction),
+            fontSize = 10.sp,
+            modifier = Modifier.padding(bottom = 50.dp)
         )
 
         Box(

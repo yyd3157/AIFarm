@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AIFarm</string>
+    <string name="welcome">Welcome to AIFarm</string>
+    <string name="app_introduction">Analyze photos for ripeness and pests easily</string>
 </resources>
