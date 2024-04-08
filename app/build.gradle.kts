@@ -1,9 +1,16 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
+
+val properties = Properties()
+properties.load(project.rootProject.file("local.properties").inputStream())
+
+val KAKAO_REDIRECTION_SCHEME = properties.getProperty("KakaoRedirectionScheme")
 
 android {
     namespace = "com.young.aifarm"
@@ -16,10 +23,14 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "KAKAO_NATIVE_KEY", properties.getProperty("KakaoNativeKey"))
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        manifestPlaceholders["KAKAO_REDIRECTION_SCHEME"] = KAKAO_REDIRECTION_SCHEME
     }
 
     buildTypes {
@@ -40,6 +51,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.2"
@@ -78,4 +90,7 @@ dependencies {
     //Hilt
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+    //Kakao
+    implementation("com.kakao.sdk:v2-user:2.13.0")
 }
