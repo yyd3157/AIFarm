@@ -82,6 +82,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     //Navigation
+    implementation("androidx.compose.material:material:1.6.5")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation("androidx.navigation:navigation-dynamic-features-fragment:2.7.7")
