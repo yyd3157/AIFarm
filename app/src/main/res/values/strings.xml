@@ -2,4 +2,7 @@
     <string name="app_name">AIFarm</string>
     <string name="welcome">Welcome to AIFarm</string>
     <string name="app_introduction">Analyze photos for ripeness and pests easily</string>
+    <string name="bn_text_weather">날 씨</string>
+    <string name="bn_text_analyze">분 석</string>
+    <string name="bn_text_check_list">목 록</string>
 </resources>
